@@ -1,4 +1,4 @@
-pragma solidity ^0.4.24;
+pragma solidity ^0.8.9;
 
 contract InfinityStone {
     address owner;
@@ -39,9 +39,8 @@ contract InfinityGauntlet{
     }
     
     function acquireStone(InfinityStone stone) public payable {
-        if (stone.acquire()) {
-            gauntlet.push(stone);
-        }
+        stone.acquire();
+        gauntlet.push(stone);
     }
 
     function giveAwayStone(InfinityStone stone, address to) public {
